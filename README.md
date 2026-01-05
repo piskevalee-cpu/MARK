@@ -26,15 +26,15 @@ Mark's memory is **100% local**. No data brokers, no cloud storage of your perso
 
 ## The Kleos System
 
-Kleos is Mark's advanced capabilities engine. It transforms Mark from a simple chatbot into a reasoning agent.
+Kleos is Mark's advanced capabilities engine, entirely developed by me. It transforms Mark from a simple chatbot into a reasoning agent.
 
 **Why use `/kleos`?**
 Standard LLMs often rush to answer, missing context or nuance. Kleos forces a "Think before you speak" workflow.
 
 ### How it works:
-1. **Analyze**: You provide a prompt. Kleos analyzes it for ambiguity, missing context, or hidden requirements.
-2. **Refine**: It acts as an expert "Prompt Engineer", rewriting your query to be logically perfect.
-3. **Execute**: It sends the optimized prompt to the AI.
+1. **Analyze**: One provides a prompt. Kleos analyzes it and asks questions to reduce ambiguity, missing context, or hidden requirements.
+2. **Refine**: It acts as an expert "Prompt Engineer", rewriting the query to be logically perfect.
+3. **Execute**: After the user approves the new query, Kleos sends the optimized prompt to the AI.
 
 **Result**: Drastically higher quality answers, better code, and deeper insights.
 
@@ -51,19 +51,8 @@ Standard LLMs often rush to answer, missing context or nuance. Kleos forces a "T
 
 Requirements: Python 3.8+
 
-```bash
-# Clone the repository
-git clone https://github.com/piskevalee-cpu/MARK.git
-cd mark
+Linux tutorial (should work with every distro): https://youtu.be/dWaC3V3CXEA
 
-# Install globally
-pip install .
-```
-
-To run Mark:
-```bash
-mark
-```
 
 ---
 
@@ -140,3 +129,4 @@ Note that this tool has been partially vibecoded and debugged by AI, it is still
 
 ## License
 MIT License
+
