@@ -17,6 +17,7 @@ dependencies = [
     "pydantic>=2.0.0",
     "pydantic-settings>=2.0.0",
     "google-genai>=0.2.0",
+    "groq>=0.4.0",
 ]
 
 [project.scripts]
@@ -24,4 +25,5 @@ mark = "mark_cli.main:main"
 
 [tool.setuptools]
 packages = ["mark_cli", "mark_cli.memory", "mark_cli.providers", "mark_cli.ui"]
+
 
