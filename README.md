@@ -4,6 +4,13 @@
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+
+# MARK - v1.1.1 
+
+**Changelog:**
+-New model: Groq Compound with web scouting! 
+-Fixed graphical bugs
+
 ## What is MARK?
 
 Mark is a personal, persistent, and intelligent assistant that lives entirely in your terminal. 
@@ -140,3 +147,4 @@ Note that this tool has been partially vibecoded and debugged by AI, it is still
 
 ## License
 MIT License
+
