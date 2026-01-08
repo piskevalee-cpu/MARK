@@ -76,7 +76,7 @@ class MarkInterface:
         banner.append("\n")
         banner.append("  Now with Kleos system! ", style=f"italic {COLORS['muted']}")
         banner.append(" | ", style=COLORS["muted"])
-        banner.append("v1.0.0\n", style=COLORS["info"])
+        banner.append("v1.1.1\n", style=COLORS["info"])
         banner.append("\n")
         
         self.console.print(banner)
@@ -444,16 +444,18 @@ class SetupWizard:
             max_choice = 4
         else:  # groq
             models = [
-                ("1", "llama-3.3-70b-versatile", "Llama 70B - Fast & versatile"),
-                ("2", "openai/gpt-oss-120b", "GPT-OSS 120B - High capability"),
-                ("3", "moonshotai/Kimi-K2-Instruct", "Kimi K2 - Coding & reasoning"),
+                ("1", "groq/compound", "Groq Compound - Web Search & Tools"),
+                ("2", "llama-3.3-70b-versatile", "Llama 70B - Fast & versatile"),
+                ("3", "openai/gpt-oss-120b", "GPT-OSS 120B - High capability"),
+                ("4", "moonshotai/Kimi-K2-Instruct", "Kimi K2 - Coding & reasoning"),
             ]
             model_map = {
-                "1": "llama-3.3-70b-versatile",
-                "2": "openai/gpt-oss-120b", 
-                "3": "moonshotai/Kimi-K2-Instruct",
+                "1": "groq/compound",
+                "2": "llama-3.3-70b-versatile",
+                "3": "openai/gpt-oss-120b", 
+                "4": "moonshotai/Kimi-K2-Instruct",
             }
-            max_choice = 3
+            max_choice = 4
         
         for num, model, desc in models:
             self.console.print(Text(

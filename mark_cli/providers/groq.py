@@ -24,8 +24,9 @@ class GroqProvider(AIProvider):
     """
     
     MODELS = [
-        "openai/gpt-oss-120b",
+        "groq/compound",
         "llama-3.3-70b-versatile",
+        "openai/gpt-oss-120b",
         "moonshotai/Kimi-K2-Instruct",
     ]
     
@@ -34,6 +35,7 @@ class GroqProvider(AIProvider):
         "openai/gpt-oss-120b": "GPT-OSS 120B",
         "llama-3.3-70b-versatile": "Llama 70B Versatile",
         "moonshotai/Kimi-K2-Instruct": "Kimi K2",
+        "groq/compound": "Groq Compound",
     }
     
     def __init__(self, api_key: str, model: str = "llama-3.3-70b-versatile"):
@@ -64,15 +66,6 @@ class GroqProvider(AIProvider):
     ) -> AIResponse:
         """
         Send a message to Groq and get a response.
-        
-        Args:
-            message: The user's message
-            context: Previous conversation history
-            system_prompt: Optional system prompt
-            memories: Optional memories to include
-            
-        Returns:
-            AIResponse with content and usage stats
         """
         try:
             # Build messages list
@@ -82,7 +75,7 @@ class GroqProvider(AIProvider):
             if system_prompt:
                 messages.append({"role": "system", "content": system_prompt})
             
-            # Add memories to system context if present
+            # Add memories
             if memories:
                 memory_content = (
                     f"--- MEMORY CONTEXT ---\n"
@@ -199,8 +192,10 @@ class GroqProvider(AIProvider):
             
             # Yield chunks
             for chunk in stream:
-                if chunk.choices and chunk.choices[0].delta.content:
-                    yield chunk.choices[0].delta.content
+                if chunk.choices:
+                    delta = chunk.choices[0].delta
+                    if delta.content is not None:
+                         yield delta.content
                     
         except Exception as e:
             error_msg = str(e)
@@ -210,7 +205,7 @@ class GroqProvider(AIProvider):
                 raise RuntimeError("Rate limit exceeded.")
             else:
                 raise RuntimeError(f"Groq Streaming Error: {error_msg}")
-    
+
     async def validate_api_key(self) -> bool:
         """
         Validate the API key by making a test request.

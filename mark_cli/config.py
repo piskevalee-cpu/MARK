@@ -54,8 +54,9 @@ AVAILABLE_MODELS = {
         "gemma-3-27b",
     ],
     "groq": [
-        "openai/gpt-oss-120b",
+        "groq/compound",
         "llama-3.3-70b-versatile",
+        "openai/gpt-oss-120b",
         "moonshotai/Kimi-K2-Instruct",
     ],
     "claude": [
@@ -236,7 +237,7 @@ UI_MESSAGES = {
         "thinking_timer": "Thinking for {elapsed}s",
         "generating": "Generating your answer",
         "system_op_cancelled": "Operation cancelled.",
-        "prompt_analyst_system": "You are a world-class consultant. Your task is to output ONLY 3-5 targeted clarifying questions to help the user with their SPECIFIC TASK. Do not ask meta-questions about prompt optimization. Do not add any other text.",
+        "prompt_analyst_system": "You are a world-class consultant. Your goal is to ASK QUESTIONS, NOT ANSWER. Output ONLY 3-5 targeted clarifying questions. Do NOT provide the final solution yet.",
         "prompt_master_system": "You are a Senior Prompt Engineer. Output ONLY the optimized MASTER PROMPT based on the conversation. No introductions, no comments.",
     }
 }
@@ -260,8 +261,12 @@ PROCESS:
 3. Output ONLY 3-5 targeted clarifying questions (in the same language as the user's prompt!) to gather these missing details.
 4. Focus on the CONTENT of the task (the "what" and "how"), not on the "prompt optimization" process itself.
 
-Your output must contain ONLY the numbered questions. No introductions, no meta-discussions, no conclusions.
-Always respond in the SAME LANGUAGE as the user's prompt (or the language requested by the user)."""
+CRITICAL INSTRUCTIONS:
+- DO NOT answer the user's request directly.
+- DO NOT provide solutions, recommendations, or lists.
+- YOUR ROLE IS ONLY TO ASK QUESTIONS.
+- Your output must contain ONLY the numbered questions. No introductions, no meta-discussions, no conclusions.
+- Always respond in the SAME LANGUAGE as the user's prompt (or the language requested by the user)."""
 
 KLEOS_THINKER_PROMPT = """You are a world-class AI expert and master problem solver. 
 Your goal is to provide a highly accurate, professional, and comprehensive response.
