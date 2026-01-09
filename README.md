@@ -4,6 +4,7 @@
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+!users will need personal API key for the choosen provider!
 
 # MARK - v1.1.1 
 
@@ -80,7 +81,8 @@ On first run, Mark guides you through setup.
 
 **Supported Providers (more to come..):**
 1. **Groq** (Fast Inference, suggested)
-   - `llama-3.3-70b-versatile`
+   - `groq/compound`
+   - `llama-3.3-70b-versatile` 
    - `openai/gpt-oss-120b`
    - `moonshotai/Kimi-K2-Instruct`
 2. **GOOGLE** (BETA)
@@ -147,4 +149,5 @@ Note that this tool has been partially vibecoded and debugged by AI, it is still
 
 ## License
 MIT License
+
 
