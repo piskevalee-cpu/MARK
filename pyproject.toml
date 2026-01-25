@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mark-cli"
+version = "1.1.1"
+description = "MARK - A professional AI Terminal Wrapper with persistent memory"
+authors = [{name = "Valerio Pischedda"}]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "rich>=13.0.0",
+    "httpx>=0.25.0",
+    "keyring>=24.0.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "google-genai>=0.2.0",
+    "groq>=0.4.0",
+]
+
+[project.scripts]
+mark = "mark_cli.main:main"
+
+[tool.setuptools]
+packages = ["mark_cli", "mark_cli.memory", "mark_cli.providers", "mark_cli.ui"]
