@@ -10,7 +10,8 @@
 
 **Changelog:**
 
-- **Universal English Prompt**: MARK now speaks English by default with a professionally tuned system prompt.
+- **Themes**: customize your MARK, run /themes to discover more
+- **OLLAMA SUPPORT!**: MARK is now able to run thru local models via ollama! ollama cloud models are supported too
 - **Memory Intelligence**: Improved context awareness; MARK now correctly interprets "I" or "My" in memories as referring to the user.
 - **Stats Toggle**: Added `/ts` command to show/hide session stats.
 
@@ -163,3 +164,4 @@ Note that this tool has been partially vibecoded and debugged by AI, it is still
 ## License
 
 MIT License
+
