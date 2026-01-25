@@ -1,2 +1,0 @@
-[console_scripts]
-mark = mark_cli.main:main
