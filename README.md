@@ -6,16 +6,18 @@
 
 !users will need personal API key for the choosen provider!
 
-# MARK - v1.1.1 
+# MARK - v1.2.0
 
 **Changelog:**
--New model: Groq Compound with web scouting! 
--Fixed graphical bugs
+
+- **Universal English Prompt**: MARK now speaks English by default with a professionally tuned system prompt.
+- **Memory Intelligence**: Improved context awareness; MARK now correctly interprets "I" or "My" in memories as referring to the user.
+- **Stats Toggle**: Added `/ts` command to show/hide session stats.
 
 ## What is MARK?
 
-Mark is a personal, persistent, and intelligent assistant that lives entirely in your terminal. 
-It combines the power of state-of-the-art LLMs (Google Gemini & Groq) with a local, secure memory system. 
+Mark is a personal, persistent, and intelligent assistant that lives entirely in your terminal.
+It combines the power of state-of-the-art LLMs (Google Gemini & Groq) with a local, secure memory system.
 
 **The coolest feature?** Local Memory.
 If you tell Mark something, he remembers it forever (saved locally on your machine).
@@ -40,6 +42,7 @@ Kleos is Mark's advanced capabilities engine. It transforms Mark from a simple c
 Standard LLMs often rush to answer, missing context or nuance. Kleos forces a "Think before you speak" workflow.
 
 ### How it works:
+
 1. **Analyze**: You provide a prompt. Kleos analyzes it for ambiguity, missing context, or hidden requirements.
 2. **Refine**: It acts as an expert "Prompt Engineer", rewriting your query to be logically perfect.
 3. **Execute**: It sends the optimized prompt to the AI.
@@ -47,13 +50,14 @@ Standard LLMs often rush to answer, missing context or nuance. Kleos forces a "T
 **Result**: Drastically higher quality answers, better code, and deeper insights.
 
 **Usage:**
+
 ```bash
 /kleos Explain how to build a neural network from scratch
 ```
-*(Mark will pause, analyze your request, optimize the internal prompt, and then deliver a superior tutorial)*
+
+_(Mark will pause, analyze your request, optimize the internal prompt, and then deliver a superior tutorial)_
 
 ---
-
 
 ## Installation
 
@@ -69,6 +73,7 @@ pip install .
 ```
 
 To run Mark:
+
 ```bash
 mark
 ```
@@ -77,25 +82,31 @@ mark
 
 ## Configuration & Models
 
-On first run, Mark guides you through setup. 
+On first run, Mark guides you through setup.
 
 **Supported Providers (more to come..):**
+
 1. **Groq** (Fast Inference, suggested)
    - `groq/compound`
-   - `llama-3.3-70b-versatile` 
+   - `llama-3.3-70b-versatile`
    - `openai/gpt-oss-120b`
    - `moonshotai/Kimi-K2-Instruct`
 2. **GOOGLE** (BETA)
    - `gemini-2.5-flash`
    - `gemini-2.5-flash-lite`
    - `gemini-3-flash-preview`
-   - **`gemma-3-27b`** (with native language support)
+   - `gemma-3-27b`
+3. **LOCAL** (via Ollama, BETA)
+   - Supports any model installed on your local Ollama instance (e.g., `llama3.2`, `mistral`, `phi3`). No API key required, just need to have ollama running!
 
 You can change settings anytime with:
+
 ```bash
 /config
 ```
+
 or switch models on the fly:
+
 ```bash
 /model
 ```
@@ -107,18 +118,19 @@ or switch models on the fly:
 
 ## Command Reference
 
-| Command | Description |
-|---------|-------------|
-| `/help` | Show this help menu |
-| `/kleos <prompt>` | **Activate Kleos System** (Reasoning Mode) |
-| `/model` | Switch AI Provider & Model |
-| `/config` | Update API Keys and Defaults |
-| `/memory list` | View all saved memories |
-| `/memory search <q>` | Semantic search in memory |
-| `/remember <text>` | Save a fact to local memory |
-| `/reset` | Clear current conversation context |
-| `/stats` | View session usage & token costs |
-| `/exit` | Close Mark |
+| Command              | Description                                |
+| -------------------- | ------------------------------------------ |
+| `/help`              | Show this help menu                        |
+| `/kleos <prompt>`    | **Activate Kleos System** (Reasoning Mode) |
+| `/web <prompt>`      | **Search the Web** (Real-time info)        |
+| `/model`             | Switch AI Provider & Model                 |
+| `/config`            | Update API Keys and Defaults               |
+| `/memory list`       | View all saved memories                    |
+| `/memory search <q>` | Semantic search in memory                  |
+| `/remember <text>`   | Save a fact to local memory                |
+| `/ts`                | Toggle session statistics visibility       |
+| `/reset`             | Clear current conversation context         |
+| `/exit`              | Close Mark                                 |
 
 ---
 
@@ -142,12 +154,12 @@ API keys are stored securely using your OS's native keychain (Windows Credential
 ---
 
 ### About
+
 Created by **Valerio Pischedda** (piskevalee-cpu).
-Started as a simple Telegram bot for school schedules, evolved into a powerful terminal AI companion.   
+Started as a simple Telegram bot for school schedules, evolved into a powerful terminal AI companion.
 
 Note that this tool has been partially vibecoded and debugged by AI, it is still in beta, and may have some bugs. Please report any issues you find on the [GitHub repository](https://github.com/piskevalee-cpu/MARK), or send me an e-mail at piskevalee@gmail.com !
 
 ## License
+
 MIT License
-
-
